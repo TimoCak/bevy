@@ -789,6 +789,12 @@ impl<'w> EntityMut<'w> {
     pub fn update_location(&mut self) {
         self.location = self.world.entities().get(self.entity).unwrap();
     }
+
+    /*TODO: documentation */
+    pub fn remove_by_id(&mut self, component_id: ComponentId) -> Option<()> {
+        self.world.remove_resource_by_id(component_id)?;
+        Some(())
+    }
 }
 
 impl<'w> EntityMut<'w> {
