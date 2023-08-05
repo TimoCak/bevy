@@ -790,7 +790,7 @@ impl<'w> EntityMut<'w> {
         self.location = self.world.entities().get(self.entity).unwrap();
     }
 
-    /*TODO: documentation */
+    /// Removes component with a certain componentId 
     pub fn remove_by_id(&mut self, component_id: ComponentId) -> Option<()> {
         self.world.remove_resource_by_id(component_id)?;
         Some(())
